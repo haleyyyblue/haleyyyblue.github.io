@@ -9,7 +9,7 @@ tag:
 comments: true
 --- 
 정규표현식 공부를 미루다가 이번기회에 익혀보려고 정리해보았다. 
-출처는 _<파이썬 프로그래밍으로 지루한 작업 자동화하기>_
+출처는 _파이썬 프로그래밍으로 지루한 작업 자동화하기_
 # Useful Methods
 ## re.compile()
 Regular expression uses lots of back slash(\). 
