@@ -8,6 +8,8 @@ tag:
 - regex
 comments: true
 --- 
+정규표현식 공부를 미루다가 이번기회에 익혀보려고 정리해보았다. 
+출처는 _<파이썬 프로그래밍으로 지루한 작업 자동화하기>_
 # Useful Methods
 ## re.compile()
 Regular expression uses lots of back slash(\). 
@@ -190,3 +192,8 @@ if len(matches) > 0:
 else:
     print('No phone numbers or email addresses found.')
 {% endhighlight %}
+
+# Useful Website
+[Regex Test](http://regexpal.com/)
+[Official python doc](http://docs.python.org/3/library/re.html)
+[Regex Tutorial](http://www.regular-expressions.info/)
