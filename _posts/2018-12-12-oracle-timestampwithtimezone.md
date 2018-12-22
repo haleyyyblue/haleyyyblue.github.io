@@ -13,12 +13,12 @@ comments: true
 Oracle's timestamp with timezone data type can be inserted and updated with various timezone. and there are several ways to determine timezone of the timestamp data. Your timestamp with timezone data will be inserted as following condition.
 
 ### About timezone
-1) If user inserted NULL and default is SYSTIMESTAMP, then timezone will be DB Server's timezone.
-2) If App uses some tool(i.e Hibernate), then timezone will be dependent on the tool's behavior.
-3) If user executes alter command for timezone before inserting timestamp with timezone, that will be the timezone.
+1. If user inserted NULL and default is SYSTIMESTAMP, then timezone will be DB Server's timezone.
+2. If App uses some tool(i.e Hibernate), then timezone will be dependent on the tool's behavior.
+3. If user executes alter command for timezone before inserting timestamp with timezone, that will be the timezone.
 
 ### About return value
-1) If user only selects HH:MI:SS, then there is a risk we can't compare time exactly in case different timezone data exists.
+1. If user only selects HH:MI:SS, then there is a risk we can't compare time exactly in case different timezone data exists.
 
 ## Sample SQL
 ### Create Test Table
