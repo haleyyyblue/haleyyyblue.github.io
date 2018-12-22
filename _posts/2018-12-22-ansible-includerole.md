@@ -28,7 +28,7 @@ There's one way to handle this without modifying original role yml.
 {% endraw %}
 
 ### playbook we can try
-{% highlight yaml %}
+{% raw %}
 ---
 - vars_files:
     - filecopy_env
@@ -43,14 +43,14 @@ There's one way to handle this without modifying original role yml.
       vars:
         source: "{{ item.source }}"
         target: "{{ item.target }}"
-{% endhighlight %}
+{% endraw %}
 
 ### How to write an array for this ?
 Here's contents of filecopy_env file
-{% highlight yaml %}
+{% raw %}
 username: hogehoge
 file_array:
   - { source : /home/hogehoge/hoge01.txt, target : /home/asagohan/hoge01.txt }
   - { source : /home/hogehoge/hoge02.txt, target : /home/asagohan/hoge02.txt }
 
-{% endhighlight %}
+{% endraw %}
