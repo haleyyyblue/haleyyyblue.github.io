@@ -16,14 +16,16 @@ There's one way to handle this without modifying original role yml.
 
 ## How to handle
 ### Original role file
-{% highlight yaml %}
+{% raw %}
+```
 ---
 - name: File copy
   copy: >
-    src=\\\{{ source \\\}}
+    src={{ source }}
     dest={{ target }}
     mode=0755
-{% endhighlight %}
+```
+{% endraw %}
 
 ### playbook we can try
 {% highlight yaml %}
