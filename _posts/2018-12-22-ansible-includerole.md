@@ -16,36 +16,36 @@ There's one way to handle this without modifying original role yml.
 
 ## How to handle
 ### Original role file
-{% highlight ansible %}
+{% highlight yaml %}
 ---
 - name: File copy
   copy: >
-    src=\{\{ source \}\}
-    dest=\{\{ target \}\}
+    src={{ source }}
+    dest={{ target }}
     mode=0755
 {% endhighlight %}
 
 ### playbook we can try
-{% highlight ansible %}
+{% highlight yaml %}
 ---
 - vars_files:
     - filecopy_env
-  hosts: '\{\{ server \}\}'
+  hosts: '{{ server }}'
   become: yes
-  become_user: '\{\{ username \}\}'
+  become_user: '{{ username }}'
   tasks:
     - name: copy multiple script
-      with_items: "\{\{ file_array \}\}"
+      with_items: "{{ file_array }}"
       include_role:
         name: file_copy
       vars:
-        source: "\{\{ item.source \}\}"
-        target: "\{\{ item.target \}\}"
+        source: "{{ item.source }}"
+        target: "{{ item.target }}"
 {% endhighlight %}
 
 ### How to write an array for this ?
 Here's contents of filecopy_env file
-{% highlight ansible %}
+{% highlight yaml %}
 username: hogehoge
 file_array:
   - { source : /home/hogehoge/hoge01.txt, target : /home/asagohan/hoge01.txt }
