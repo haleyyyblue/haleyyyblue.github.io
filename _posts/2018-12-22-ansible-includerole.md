@@ -20,8 +20,8 @@ There's one way to handle this without modifying original role yml.
 ---
 - name: File copy
   copy: >
-    src={{ source }}
-    dest={{ target }}
+    src=\{\{ source \}\}
+    dest=\{\{ target \}\}
     mode=0755
 {% endhighlight %}
 
@@ -30,17 +30,17 @@ There's one way to handle this without modifying original role yml.
 ---
 - vars_files:
     - filecopy_env
-  hosts: '{{ server }}'
+  hosts: '\{\{ server \}\}'
   become: yes
-  become_user: '{{ username }}'
+  become_user: '\{\{ username \}\}'
   tasks:
     - name: copy multiple script
-      with_items: "{{ file_array }}"
+      with_items: "\{\{ file_array \}\}"
       include_role:
         name: file_copy
       vars:
-        source: "{{ item.source }}"
-        target: "{{ item.target }}"
+        source: "\{\{ item.source \}\}"
+        target: "\{\{ item.target \}\}"
 {% endhighlight %}
 
 ### How to write an array for this ?
