@@ -20,7 +20,7 @@ There's one way to handle this without modifying original role yml.
 ---
 - name: File copy
   copy: >
-    src='{'{ source }'}'
+    src={'{'}{'{'} source {'}'}{'}'}
     dest={{ target }}
     mode=0755
 {% endhighlight %}
